@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ERROR 404 — سيرفر ديسكورد</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka:wght@500;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#190d3a;--pink:#ff9ecb;--lav:#b8a1ff;--mint:#8ff0d0;--ink:#fff4fb;--mut:#d3c2ec;--card:rgba(255,255,255,.09);--ln:rgba(255,190,230,.3);--ac:#ff8fc7;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.8;overflow-x:hidden;background:linear-gradient(#190d3a,#3a1a5e 55%,#7a2f7e) fixed;min-height:100vh}
+.fr{font-family:Fredoka,Cairo,sans-serif}
+#pet{position:fixed;inset:0;pointer-events:none;z-index:60}
+#glow{position:fixed;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(circle,rgba(255,150,210,.2),transparent 65%);pointer-events:none;z-index:59;left:50%;top:50%}
+.bar{position:fixed;left:0;right:0;height:7vh;background:#000;z-index:96;transition:height 1s}.bar.t{top:0}.bar.b{bottom:0}
+body.main .bar{height:0}
+.screen{position:fixed;inset:0;z-index:90;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;background:radial-gradient(ellipse at 50% 35%,#4b2183,#150a30 75%);transition:opacity .9s,visibility .9s;padding:1rem;text-align:center}
+.screen.off{opacity:0;visibility:hidden}
+.logo{font:700 clamp(2.4rem,11vw,6rem)/1 Fredoka,sans-serif;direction:ltr;background:linear-gradient(90deg,#ffb3dc,#c9b3ff,#9ff2dc);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(255,150,220,.6))}
+.jp{color:var(--pink);letter-spacing:.4em;font-size:.9rem;direction:ltr}
+.prog{width:min(380px,80vw);height:8px;border-radius:9px;background:#ffffff22;overflow:hidden}.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--lav));border-radius:9px}
+.btn{display:inline-block;cursor:pointer;border:0;border-radius:99px;background:linear-gradient(90deg,#ff8fc7,#b58cff);color:#2a0b3d;padding:.7rem 1.8rem;font:900 1rem Cairo,sans-serif;text-decoration:none;transition:.25s;box-shadow:0 6px 24px rgba(255,140,200,.35)}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px) scale(1.03);outline:none}
+.btn.g{background:var(--card);color:var(--ink);box-shadow:none;border:1px solid var(--ln)}
+.btn.s{padding:.3rem .9rem;font-size:.85rem}
+#intro{background:conic-gradient(from 0deg at 50% 50%,#2b0f55,#6a2a8f,#2b0f55,#a0447f,#2b0f55)}
+#intro::before{content:"";position:absolute;inset:-50%;background:repeating-conic-gradient(#ffffff14 0 2deg,transparent 2deg 6deg);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#cards{position:relative;min-height:9rem;display:flex;align-items:center;justify-content:center;width:100%}
+.cd{position:absolute;font:700 clamp(1.4rem,5.5vw,2.8rem)/1.5 Cairo,sans-serif;animation:cd 3s forwards;opacity:0;text-shadow:0 0 20px #ff8fc7}
+@keyframes cd{0%{opacity:0;transform:translateY(30px) scale(.9);filter:blur(8px)}18%,80%{opacity:1;transform:none;filter:none}100%{opacity:0;transform:translateY(-20px);filter:blur(6px)}}
+.cd.last{animation:cl 3s forwards}@keyframes cl{0%{opacity:0;transform:scale(.6)}30%,100%{opacity:1;transform:none}}
+#skip{position:absolute;bottom:10vh;z-index:3}
+.box{width:min(440px,92vw);padding:2rem;border-radius:28px;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--ln);box-shadow:0 10px 60px rgba(255,130,200,.25)}
+.box img{width:110px;height:110px;object-fit:cover;border-radius:50%;border:3px solid var(--pink);margin-bottom:.8rem}
+input,select,textarea{font:inherit;color:#fff;background:#0004;border:1px solid var(--ln);border-radius:14px;padding:.6rem .9rem;width:100%;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px #ff8fc733}
+select option{color:#000}
+#err{color:#ffb3b3;min-height:1.8em;font-weight:700}
+.hint{font-size:.85rem;color:var(--mut)}
+.shake{animation:sh .45s}@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+#site{display:none}body.main #site{display:block}
+nav{position:fixed;top:.6rem;left:.6rem;right:.6rem;z-index:70;display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.5rem 1.1rem;border-radius:99px;background:rgba(30,12,60,.7);backdrop-filter:blur(12px);border:1px solid var(--ln)}
+nav .l{display:flex;gap:1.1rem;flex-wrap:wrap}nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.9rem}nav a:hover{color:var(--pink)}
+.tg2{display:flex;gap:.4rem;align-items:center}
+.ib{background:var(--card);border:1px solid var(--ln);color:var(--ink);border-radius:99px;cursor:pointer;padding:.2rem .7rem;font:inherit;font-size:.85rem}
+.bd{font:700 .75rem Fredoka;padding:.1rem .7rem;border-radius:99px;border:1px solid currentColor;direction:ltr}
+.r-owner{color:#ffd166}.r-admin{color:#7fd8ff}.r-manager{color:#ff9bd0}.r-mod{color:#9dff8a}.r-member{color:#cbb8ff}
+#ann{margin:5rem 1rem 0;padding:.7rem 1rem;border-radius:18px;background:#ffb3dc33;border:1px dashed var(--pink);text-align:center;font-weight:700}
+#ann[hidden]{display:none}
+#toast{position:fixed;top:5rem;left:50%;transform:translate(-50%,-30px);opacity:0;z-index:97;width:min(480px,92vw);padding:1rem 1.3rem;border-radius:20px;background:#2a1060f0;border:1px solid var(--pink);box-shadow:0 0 40px #ff8fc755;transition:.5s;text-align:center}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.2rem 3rem;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:linear-gradient(135deg,#4b2183,#a0447f);background-size:cover;background-position:center;opacity:.45;filter:hue-rotate(305deg) saturate(.7)}
+body:not(.ds) .hero .bg{animation:push 30s ease-in-out infinite alternate}@keyframes push{to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,#190d3a)}
+.hero .in{position:relative;z-index:2}
+.hero p{max-width:34ch;margin:1rem auto 1.6rem;font-size:1.2rem}
+.fl{display:inline-block;animation:fl 3.5s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-12px) rotate(6deg)}}
+section.s{padding:4.5rem 1.2rem;max-width:1080px;margin:auto;position:relative;z-index:61}
+h2{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:900;margin-bottom:1.3rem}
+.gr{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.cdp{padding:1.3rem;border-radius:24px;background:var(--card);border:1px solid var(--ln);backdrop-filter:blur(8px);transition:.3s}
+.cdp:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(255,130,200,.3)}
+.cdp h3{margin-bottom:.3rem}.cdp p,.cdp li{color:var(--mut);font-size:.92rem}.cdp ul{margin:.4rem 1.2rem 0}
+.ab{display:grid;grid-template-columns:1fr 240px;gap:2rem;align-items:center}
+.ab img{width:100%;border-radius:28px;border:3px solid var(--pink);box-shadow:0 0 50px #ff8fc766;animation:fl 5s ease-in-out infinite}
+body.ds .ab img,body.ds .fl{animation:none}
+#rl{margin:0 1.4rem}#rl li{margin:.4rem 0}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.tabs .ib.on{background:var(--ac);color:#2a0b3d;font-weight:900}
+.pane{display:none}.pane.on{display:block}
+.tk{padding:1rem;border-radius:18px;background:#0003;border:1px solid var(--ln);margin:.7rem 0}.tk.closed{opacity:.6}
+.rp{margin:.4rem 1rem 0 0;padding:.4rem .8rem;border-radius:12px;background:#ffffff14}
+.row{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}.row input{flex:1;min-width:140px}
+.mr{display:flex;justify-content:space-between;gap:.5rem;padding:.5rem .2rem;border-bottom:1px solid var(--ln);flex-wrap:wrap}
+.join{text-align:center;padding:5rem 1rem 6rem;position:relative;z-index:61}
+footer{text-align:center;color:var(--mut);padding:2rem;font-size:.85rem;position:relative;z-index:61}
+body.ds *{animation:none!important;transition:none!important}body.ds #pet,body.ds #glow{display:none}
+@media(max-width:720px){.ab{grid-template-columns:1fr}nav .l{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+:root{--bg:#14030a;--pink:#ff4d5e;--lav:#ff7a85;--mint:#ffb3a0;--ink:#fff1f1;--mut:#f2b8bd;--ln:#ff2d46;--ac:#ff2d46}
+*{border-radius:0!important}
+body{background:linear-gradient(#14030a,#3a0612 60%,#6e0b1c) fixed}
+#px{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;image-rendering:pixelated;z-index:0}
+body.ds #px{display:none}
+.logo{font-family:'Press Start 2P',Fredoka,sans-serif;font-size:clamp(1.5rem,7vw,3.6rem);line-height:1.3;background:linear-gradient(90deg,#ff6b6b,#ff2d46,#ffd0d0);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(3px 3px 0 #000)}
+nav .logo{font-size:.75rem!important}
+.screen{background:radial-gradient(ellipse at 50% 35%,#5a0a1a,#12020a 75%)}
+#login{background:rgba(10,0,4,.55)}
+#intro{background:conic-gradient(from 0deg at 50% 50%,#2a0410,#7a0f20,#2a0410,#b0182c,#2a0410)}
+.btn{background:#ff2d46;color:#fff;border:3px solid #000!important;box-shadow:4px 4px 0 #000!important}
+.btn.g{background:#2a0610;border-color:#ff2d46!important}
+.btn:hover,.btn:focus-visible{transform:translate(-2px,-2px)}
+.cdp,.box,.tk,nav,#toast,#ann{border:3px solid #ff2d46!important;box-shadow:5px 5px 0 #000!important;background:rgba(22,2,8,.72)}
+#toast{background:#3a0612f0}#ann{background:#ff2d4633}
+input,select,textarea{border:3px solid #ff2d46!important;background:#14030a}
+.prog{border:3px solid #ff2d46;background:#14030a}.prog i{background:repeating-linear-gradient(90deg,#ff2d46 0 8px,#8e1022 8px 10px)}
+.hero .bg{background:none;opacity:.28;filter:none}
+.hero::after{background:linear-gradient(transparent 60%,#14030a)}
+.ab img{border:4px solid #ff2d46;box-shadow:6px 6px 0 #000}
+.cdp:hover{box-shadow:5px 5px 0 #ff2d46!important;transform:translate(-3px,-3px)}
+</style>
+</head>
+<body>
+<canvas id="px"></canvas><canvas id="pet"></canvas><div id="glow"></div><div id="toast"></div>
+<div class="bar t"></div><div class="bar b"></div>
+
+<div class="screen" id="load">
+  <div class="jp">エラー ４０４</div><h1 class="logo">ERROR 404</h1>
+  <div class="prog"><i id="pb"></i></div><div class="hint" id="log">LOADING...</div>
+  <button class="btn" id="go" style="display:none">ادخل العالم ▶</button>
+</div>
+
+<div class="screen off" id="intro"><div id="cards"></div><button class="btn g" id="skip">تخطي ⏭</button></div>
+
+<div class="screen off" id="login">
+  <form class="box" id="lf" autocomplete="off">
+    <img data-g1 alt="ERROR 404">
+    <h2 class="logo" style="font-size:2rem;margin:0">أهلاً بيك 🌸</h2>
+    <p class="hint">اكتب كود الدخول، أو اسمك لو الإدارة وضّفتلك رتبة</p>
+    <input id="code" type="text" aria-label="كود الدخول" placeholder="الكود أو الاسم" style="margin:1rem 0;text-align:center">
+    <div id="err" role="alert"></div>
+    <button class="btn" type="submit">دخول</button>
+  </form>
+</div>
+
+<div id="site">
+<nav>
+  <b class="logo" style="font-size:1.2rem;filter:none"><span class="sn">ERROR 404</span></b>
+  <div class="l"><a href="#about">عن السيرفر</a><a href="#feat">الإمكانيات</a><a href="#ranks">الرتب</a><a href="#rules">القوانين</a><a href="#dash">لوحتي</a></div>
+  <div class="tg2"><span class="bd fr" id="me"></span><span class="bd" id="badge"></span><button class="ib" id="ds" title="توفير البيانات">🍃 توفير</button><button class="ib" id="mus" aria-label="الموسيقى">🔊</button></div>
+</nav>
+<div id="ann" hidden></div>
+<header class="hero"><div class="bg" id="hbg"></div>
+  <div class="in">
+    <div class="jp">DISCORD SERVER ✦ サーバー</div>
+    <h1 class="logo"><span class="sn">ERROR 404</span></h1>
+    <p id="tg">مكان لطيف تلاقي فيه صحابك: دردشة، ألعاب، أنمي وميوزك <span class="fl">🌸</span></p>
+    <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap"><a class="btn" data-invite target="_blank" rel="noopener" href="#">ادخل السيرفر</a><a class="btn g" href="#about">اعرف اكتر</a></div>
+  </div>
+</header>
+
+<section class="s" id="about"><h2>إيه هو السيرفر؟ ✨</h2>
+ <div class="ab"><div><p>سيرفر ديسكورد دافي لمجتمع بيحب الأنمي والألعاب والميوزك. هنا بتلاقي ناس تهزر معاها، فعاليات، ودعم سريع من الإدارة لو احتجت أي حاجة.</p><p style="margin-top:.8rem">كل عضو ليه اسم ورتبة، وفي نظام تذاكر للمساعدة.</p></div><img data-g1 alt="404"></div></section>
+
+<section class="s" id="feat"><h2>الإمكانيات 🎀</h2>
+ <div class="gr">
+  <div class="cdp"><h3>🎫 نظام التذاكر</h3><p>افتح تذكرة وهتلاقي رد من الإدارة في نفس المكان.</p></div>
+  <div class="cdp"><h3>💬 الردود</h3><p>الإدارة بترد وتقفل التذاكر، وانت بتتابع الردود.</p></div>
+  <div class="cdp"><h3>🌸 أسماء عشوائية</h3><p>أول ما تدخل بتاخد اسم أنمي فريد (زي Neko-3821).</p></div>
+  <div class="cdp"><h3>🏷️ رتب بالاسم</h3><p>الإدارة بتضيف رتبتك باسمك، وبتتفعل أول ما تدخل.</p></div>
+  <div class="cdp"><h3>📜 اللوجات</h3><p>سجل بكل حاجة بتحصل، للإدارة بس.</p></div>
+  <div class="cdp"><h3>🍃 توفير البيانات</h3><p>بيوقف الصور المتحركة والمؤثرات والموسيقى.</p></div>
+  <div class="cdp"><h3>📢 الإعلانات</h3><p>إعلانات بتظهر لكل الأعضاء أعلى الموقع.</p></div>
+  <div class="cdp"><h3>🎵 موسيقى هادية</h3><p>لو-فاي لطيف يشتغل وانت بتتصفح.</p></div>
+ </div></section>
+
+<section class="s" id="ranks"><h2>الرتب وصلاحياتها 👑</h2>
+ <div class="gr">
+  <div class="cdp r-owner"><h3>👑 اونر</h3><ul><li>كل الصلاحيات</li><li>تعيين أي رتبة بالاسم</li><li>اسم السيرفر وإعادة الضبط</li><li>حذف الأعضاء والمسح</li></ul></div>
+  <div class="cdp r-admin"><h3>🛡️ اداري</h3><ul><li>رؤية أسماء الأعضاء</li><li>تعيين رتب (حتى مانجر)</li><li>اللوجات</li><li>لون الموقع ورابط السيرفر</li></ul></div>
+  <div class="cdp r-manager"><h3>🌟 مانجر</h3><ul><li>تعديل القوانين والجملة الرئيسية</li><li>كل صلاحيات المشرف</li></ul></div>
+  <div class="cdp r-mod"><h3>🍀 مشرف</h3><ul><li>الرد على كل التذاكر وقفلها</li><li>نشر الإعلانات</li><li>تشغيل/إيقاف المؤثرات</li></ul></div>
+  <div class="cdp r-member"><h3>🌷 عضو</h3><ul><li>فتح تذاكر ومتابعة ردودها</li><li>الرومات العامة والفعاليات</li><li>توفير البيانات والموسيقى</li></ul></div>
+ </div></section>
+
+<section class="s" id="rules"><h2>القوانين 📖</h2><ul id="rl"><li>احترم كل الأعضاء.</li><li>ممنوع السبام والإعلانات من غير إذن.</li><li>ممنوع أي محتوى مخالف.</li><li>كلام الإدارة نهائي، والاعتراض في التذاكر.</li><li>استخدم كل روم في موضوعه.</li></ul></section>
+
+<section class="s" id="dash"><h2>لوحتي 🎛️</h2>
+ <div class="tabs" id="tabs"></div>
+ <div class="pane" id="p_t"><div class="cdp"><h3>فتح تذكرة جديدة</h3><input id="tt" placeholder="عنوان المشكلة" style="margin:.5rem 0"><textarea id="tm" rows="3" placeholder="اشرح المشكلة"></textarea><div class="row"><button class="btn s" id="tn">إرسال التذكرة</button></div></div><div id="tl"></div></div>
+ <div class="pane" id="p_m"><div class="cdp"><h3>تعيين رتبة بالاسم</h3><div class="row"><input id="as_n" placeholder="اسم العضو"><select id="as_r"></select><button class="btn s" id="as_b">تعيين</button></div></div><div id="ml" class="cdp" style="margin-top:1rem"></div></div>
+ <div class="pane" id="p_l"><div class="cdp" id="ll"></div></div>
+ <div class="pane" id="p_s"><div class="gr" id="st"></div></div>
+</section>
+
+<section class="join"><h2 class="logo"><span class="sn">ERROR 404</span></h2><p style="margin-bottom:1.2rem">جاهز تنضم لعيلتنا؟ 🌸</p><a class="btn" data-invite target="_blank" rel="noopener" href="#">رابط السيرفر</a></section>
+<footer>© ERROR 404 — صُنع بحب 💖</footer>
+</div>
+
+<script>
+const INVITE="https://discord.gg/vSb3AVkJuy",U1="/_blob/757536649547e5c7acf3cc2ce3e00d03",U2="/_blob/02cc12ebc4efad02dc1c60c551195112";
+const $=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const RN={member:"عضو",mod:"مشرف",manager:"مانجر",admin:"اداري",owner:"اونر"},LV={member:1,mod:2,manager:3,admin:4,owner:5};
+const CODES={"0":"member","001":"owner","002":"admin","003":"mod","004":"manager"};
+let ME=null,M=[],T=[],LG=[],CFG={},DB=null,DS=false;
+const ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+const hash=s=>"u"+[...s].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,7).toString(36);
+// ---------- store (shared db, or this device if db is unavailable)
+const CB={};
+const rd=n=>{try{return JSON.parse(ls("e4_"+n)||"[]")}catch(e){return[]}};
+const store={
+ col(n,cb){if(DB)return DB.collection(n).onSnapshot(s=>cb(s.docs.map(d=>Object.assign({id:d.id},d.data()))),()=>{});(CB[n]=CB[n]||[]).push(cb);cb(rd(n))},
+ async set(n,id,o){id=id||Date.now().toString(36)+Math.random().toString(36).slice(2,5);o.ts=o.ts||Date.now();delete o.id;
+  if(DB)await DB.collection(n).doc(id).set(o);else{const a=rd(n).filter(x=>x.id!==id);a.push(Object.assign({id},o));ls("e4_"+n,JSON.stringify(a));(CB[n]||[]).forEach(f=>f(a))}return id},
+ async del(n,id){if(DB)await DB.collection(n).doc(id).delete();else{const a=rd(n).filter(x=>x.id!==id);ls("e4_"+n,JSON.stringify(a));(CB[n]||[]).forEach(f=>f(a))}}
+};
+const log=t=>store.set("logs",null,{t,by:ME?ME.name:"-",role:ME?ME.role:""});
+const dbP=(async()=>{try{if(!window.claude||!claude.use)return;DB=await Promise.race([claude.use("db"),new Promise(r=>setTimeout(()=>r(null),6000))])}catch(e){DB=null}})();
+// ---------- effects
+const pc=$("pet"),px=pc.getContext("2d"),P=[];let run=false;
+const rs=()=>{pc.width=innerWidth;pc.height=innerHeight};rs();addEventListener("resize",rs);
+for(let i=0;i<26;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:4+Math.random()*6,s:.4+Math.random(),d:Math.random()*6.28});
+function tick(){if(DS){run=false;px.clearRect(0,0,pc.width,pc.height);return}run=true;px.clearRect(0,0,pc.width,pc.height);
+ P.forEach(p=>{p.y+=p.s;p.x+=Math.sin(p.d+=.012)*.7;if(p.y>pc.height+10){p.y=-10;p.x=Math.random()*pc.width}px.fillStyle="rgba(255,60,80,.9)";px.fillRect(p.x|0,p.y|0,p.r>6?6:4,p.r>6?6:4)});requestAnimationFrame(tick)}
+addEventListener("pointermove",e=>{const g=$("glow");g.style.left=e.clientX+"px";g.style.top=e.clientY+"px"});
+// ---------- data saver
+function media(){document.querySelectorAll("[data-g1]").forEach(i=>{if(DS)i.removeAttribute("src");else i.src=U1});$("hbg").style.backgroundImage=DS?"none":"url("+U2+")"}
+function setDS(v){DS=v;document.body.classList.toggle("ds",v);$("ds").textContent=v?"🍃 توفير: شغّال":"🍃 توفير";ls("e4_ds",v?"1":"0");media();if(v){if(ac)ac.suspend()}else{if(!run)tick();startPx();if(ac&&!muted)ac.resume()}}
+$("ds").onclick=()=>setDS(!DS);
+// ---------- audio (soft lo-fi)
+let ac,mg,muted=false,VOL=.5;
+function startAudio(){if(ac){if(!DS&&!muted)ac.resume();return}if(DS)return;try{ac=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return}
+ mg=ac.createGain();mg.gain.value=0;mg.connect(ac.destination);mg.gain.linearRampToValueAtTime(muted?0:VOL,ac.currentTime+3);
+ const dl=ac.createDelay(2);dl.delayTime.value=.37;const fb=ac.createGain();fb.gain.value=.4;dl.connect(fb);fb.connect(dl);dl.connect(mg);
+ const tn=(t,f,l,ty,v,sd)=>{const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+l);o.connect(g);g.connect(mg);if(sd)g.connect(dl);o.start(t);o.stop(t+l+.05)};
+ const nb=ac.createBuffer(1,ac.sampleRate/2,ac.sampleRate),nd=nb.getChannelData(0);for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;
+ const nz=(t,l,fr,v)=>{const q=ac.createBufferSource();q.buffer=nb;const f=ac.createBiquadFilter();f.type="highpass";f.frequency.value=fr;const g=ac.createGain();g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+l);q.connect(f);f.connect(g);g.connect(mg);q.start(t);q.stop(t+l+.02)};
+ const kk=t=>{const o=ac.createOscillator(),g=ac.createGain();o.frequency.setValueAtTime(110,t);o.frequency.exponentialRampToValueAtTime(45,t+.2);g.gain.setValueAtTime(.5,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.connect(g);g.connect(mg);o.start(t);o.stop(t+.35)};
+ const CH=[[261.6,329.6,392,493.9],[220,261.6,329.6,392],[174.6,220,261.6,329.6],[196,246.9,293.7,349.2]],PN=[523.3,587.3,659.3,784,880,1046.5],SP=60/90/2;let st=0,nx=ac.currentTime+.1;
+ setInterval(()=>{while(nx<ac.currentTime+1.5){const s=st%8,b=(st>>3)%4;if(s==0)CH[b].forEach(f=>tn(nx,f/2,SP*8,"sine",.05));if(s==0||s==5)kk(nx);if(s==4)nz(nx,.15,1500,.35);if(s%2==1)nz(nx,.04,7000,.1);if(Math.random()<.35)tn(nx,PN[Math.random()*6|0],1.4,"triangle",.06,1);nx+=SP;st++}},400)}
+$("mus").onclick=()=>{muted=!muted;startAudio();if(ac){mg.gain.cancelScheduledValues(ac.currentTime);mg.gain.linearRampToValueAtTime(muted?0:VOL,ac.currentTime+.4)}$("mus").textContent=muted?"🔇":"🔊"};
+// ---------- loading -> intro -> login
+let p=0;const iv=setInterval(()=>{p+=Math.random()*6+2;if(p>=100){p=100;clearInterval(iv);$("go").style.display="";$("log").textContent="READY ✦"}$("pb").style.width=p+"%";if(p<100)$("log").textContent="LOADING... "+Math.floor(p)+"%"},110);
+const LINES=["ERROR 404 تقدّم…","في عالم مش على أي خريطة 🌌","هنا الحكاية بتبدأ… مع ناس زيك ✨","أنمي · ألعاب · ميوزك · ضحك","LOGO"];let tm=[],fin=false;
+function toLogin(){if(fin)return;fin=true;tm.forEach(clearTimeout);$("intro").classList.add("off");$("login").classList.remove("off");$("code").focus()}
+$("go").onclick=()=>{startAudio();$("load").classList.add("off");$("intro").classList.remove("off");
+ LINES.forEach((t,i)=>tm.push(setTimeout(()=>{const d=document.createElement("div");d.className="cd"+(t=="LOGO"?" last":"");d.innerHTML=t=="LOGO"?'<div class="jp">エラー ４０４</div><div class="logo">ERROR 404</div>':t;$("cards").innerHTML="";$("cards").appendChild(d)},i*2900)));
+ tm.push(setTimeout(toLogin,LINES.length*2900+300))};
+$("skip").onclick=toLogin;
+// ---------- login
+const NM=["Sakura","Kitsune","Neko","Hikari","Yuki","Akira","Ren","Sora","Mochi","Kaze","Hana","Kuro"];
+const toast=h=>{const t=$("toast");t.innerHTML=h;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),9000)};
+function bad(m){$("err").textContent=m;const b=$("lf");b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake")}
+$("lf").onsubmit=async e=>{e.preventDefault();startAudio();const v=$("code").value.trim();if(!v)return;
+ await dbP;await new Promise(r=>{if(ready)return r();const t=setTimeout(r,3500);ready=()=>{clearTimeout(t);r()}});
+ let role=CODES[v.toLowerCase()],name=ls("e4_me"),by="code";
+ if(!role){const m=M.find(x=>x.name.toLowerCase()===v.toLowerCase());if(!m)return bad("الكود أو الاسم غلط 🥺");role=m.role;name=m.name;by="name"}
+ if(!name)name=NM[Math.random()*NM.length|0]+"-"+(1000+Math.random()*9000|0);
+ const old=M.find(x=>x.name===name);if(old&&LV[old.role]>LV[role])role=old.role;
+ ls("e4_me",name);ME={name,role};
+ await store.set("members",hash(name.toLowerCase()),{name,role});log("دخول بـ"+(by=="code"?"كود":"اسم")+" — "+RN[role]);
+ $("err").textContent="";boot();document.body.classList.add("main");$("login").classList.add("off");scrollTo(0,0);
+ toast("أهلاً يا <b class='fr'>"+esc(name)+"</b> 🌸<br>رتبتك: <b class='r-"+role+"'>"+RN[role]+"</b><br><small>ده اسمك في السيرفر — احتفظ بيه.</small>")};
+let ready=null;
+(async()=>{await dbP;store.col("members",a=>{M=a;if(typeof ready=="function")ready();else ready=true;onM()});store.col("cfg",a=>{CFG=a.find(x=>x.id==="site")||{};applyCfg()})})();
+// ---------- app
+function onM(){if(!ME)return;const m=M.find(x=>x.name===ME.name);if(m&&LV[m.role]>LV[ME.role]){ME.role=m.role;boot();toast("🎉 تمت ترقيتك إلى <b class='r-"+m.role+"'>"+RN[m.role]+"</b>")}rM()}
+function applyCfg(){document.documentElement.style.setProperty("--ac",CFG.ac||"#ff2d46");const a=$("ann");a.hidden=!CFG.ann;a.textContent="📢 "+(CFG.ann||"");if(CFG.tag)$("tg").textContent=CFG.tag;
+ if(CFG.rules)$("rl").innerHTML=CFG.rules.split("\n").filter(Boolean).map(x=>"<li>"+esc(x)+"</li>").join("");
+ document.querySelectorAll("[data-invite]").forEach(a=>a.href=CFG.inv||INVITE);document.querySelectorAll(".sn").forEach(e=>e.textContent=CFG.nm||"ERROR 404");document.querySelectorAll("#fx").forEach(()=>0)}
+let subbed=false,tab="t";
+function boot(){const L=LV[ME.role];$("me").textContent=ME.name;const b=$("badge");b.textContent=RN[ME.role];b.className="bd r-"+ME.role;
+ const tabs=[["t","🎫 التذاكر",1],["m","👥 الأعضاء",4],["l","📜 اللوجات",4],["s","⚙️ الإعدادات",2]].filter(x=>L>=x[2]);
+ $("tabs").innerHTML=tabs.map(x=>`<button class="ib" data-t="${x[0]}">${x[1]}</button>`).join("");
+ $("tabs").onclick=e=>{const t=e.target.dataset.t;if(t)show(t)};show(tab);
+ $("as_r").innerHTML=Object.keys(RN).filter(k=>LV[k]<=(L==5?5:3)).map(k=>`<option value="${k}">${RN[k]}</option>`).join("");
+ setts();if(!subbed){subbed=true;store.col("tickets",a=>{T=a;rT()})}if(L>=4)store.col("logs",a=>{LG=a;rLg()})}
+function show(t){if(!document.querySelector(`[data-t="${t}"]`))t="t";tab=t;document.querySelectorAll("#tabs .ib").forEach(b=>b.classList.toggle("on",b.dataset.t===t));document.querySelectorAll(".pane").forEach(p=>p.classList.toggle("on",p.id==="p_"+t))}
+const sv=async(o,t)=>{CFG=Object.assign({},CFG,o);await store.set("cfg","site",Object.assign({},CFG));log(t);toast("تم الحفظ ✅")};
+function setts(){const L=LV[ME.role],c=$("st");c.innerHTML="";
+ const add=(lv,t,h,fn)=>{if(L<lv)return;const d=document.createElement("div");d.className="cdp";d.innerHTML="<h3>"+t+"</h3>"+h;c.appendChild(d);fn(d)};const q=(d,s)=>d.querySelector(s);
+ add(2,"📢 إعلان للأعضاء",`<input value="${esc(CFG.ann)}"><div class="row"><button class="btn s">نشر</button></div>`,d=>q(d,"button").onclick=()=>sv({ann:q(d,"input").value},"تعديل الإعلان"));
+ add(3,"✏️ الجملة الرئيسية",`<input value="${esc(CFG.tag)}"><div class="row"><button class="btn s">حفظ</button></div>`,d=>q(d,"button").onclick=()=>sv({tag:q(d,"input").value},"تعديل الجملة الرئيسية"));
+ add(3,"📖 القوانين (سطر لكل قانون)",`<textarea rows="5">${esc(CFG.rules)}</textarea><div class="row"><button class="btn s">حفظ</button></div>`,d=>q(d,"button").onclick=()=>sv({rules:q(d,"textarea").value},"تعديل القوانين"));
+ add(4,"🎨 لون الموقع",`<input type="color" value="${CFG.ac||"#ff2d46"}">`,d=>q(d,"input").onchange=e=>sv({ac:e.target.value},"تغيير اللون"));
+ add(4,"🔗 رابط السيرفر",`<input dir="ltr" value="${esc(CFG.inv||INVITE)}"><div class="row"><button class="btn s">حفظ</button></div>`,d=>q(d,"button").onclick=()=>sv({inv:q(d,"input").value},"تعديل رابط السيرفر"));
+ add(5,"🏷️ اسم السيرفر",`<input dir="ltr" value="${esc(CFG.nm||"ERROR 404")}"><div class="row"><button class="btn s">حفظ</button></div>`,d=>q(d,"button").onclick=()=>sv({nm:q(d,"input").value||"ERROR 404"},"تعديل اسم السيرفر"));
+ add(5,"♻️ إعادة ضبط الموقع",`<p class="hint">يرجّع الإعدادات للأصل.</p><div class="row"><button class="btn s g">إعادة ضبط</button></div>`,d=>q(d,"button").onclick=async()=>{CFG={};await store.set("cfg","site",{});log("إعادة ضبط الموقع");location.reload()})}
+// tickets
+$("tn").onclick=async()=>{const t=$("tt").value.trim(),m=$("tm").value.trim();if(!t||!m)return toast("اكتب العنوان والمشكلة 🌷");await store.set("tickets",null,{by:ME.name,title:t,msg:m,st:"open",re:[]});log("فتح تذكرة: "+t);$("tt").value=$("tm").value="";toast("تم إرسال تذكرتك 🎫")};
+function rT(){if(!ME)return;const L=LV[ME.role],a=T.filter(t=>L>=2||t.by===ME.name).sort((x,y)=>y.ts-x.ts);
+ $("tl").innerHTML=a.map(t=>`<div class="tk ${t.st}"><b>${esc(t.title)}</b> <small class="hint">${esc(t.by)} · ${t.st=="closed"?"مقفولة":"مفتوحة"}</small><p>${esc(t.msg)}</p>${(t.re||[]).map(r=>`<p class="rp"><b class="r-${r.role}">${esc(r.by)} (${RN[r.role]||""})</b>: ${esc(r.text)}</p>`).join("")}${t.st!="closed"?`<div class="row"><input data-r="${t.id}" placeholder="اكتب رد..."><button class="btn s" data-a="rep" data-i="${t.id}">رد</button>${L>=2?`<button class="btn s g" data-a="cl" data-i="${t.id}">قفل</button>`:""}</div>`:""}</div>`).join("")||'<p class="hint">مفيش تذاكر لسه 🌸</p>'}
+$("tl").onclick=async e=>{const a=e.target.dataset.a;if(!a)return;const t=T.find(x=>x.id===e.target.dataset.i);if(!t)return;const o=Object.assign({},t);delete o.id;
+ if(a=="rep"){const i=$("tl").querySelector(`[data-r="${t.id}"]`),x=i.value.trim();if(!x)return;o.re=(o.re||[]).concat([{by:ME.name,role:ME.role,text:x}]);await store.set("tickets",t.id,o);log("رد على تذكرة: "+t.title)}
+ else{o.st="closed";await store.set("tickets",t.id,o);log("قفل تذكرة: "+t.title)}};
+// members
+function rM(){if(!ME||LV[ME.role]<4)return;$("ml").innerHTML="<h3>الأعضاء ("+M.length+")</h3>"+M.sort((a,b)=>LV[b.role]-LV[a.role]).map(m=>`<div class="mr"><span class="fr">${esc(m.name)}</span><span><b class="bd r-${m.role}">${RN[m.role]}</b>${ME.role=="owner"?` <button class="ib" data-d="${m.id}">حذف</button>`:""}</span></div>`).join("")}
+$("ml").onclick=async e=>{const d=e.target.dataset.d;if(d&&confirm("حذف العضو؟")){await store.del("members",d);log("حذف عضو")}};
+$("as_b").onclick=async()=>{const n=$("as_n").value.trim(),r=$("as_r").value;if(!n)return;const m=M.find(x=>x.name.toLowerCase()===n.toLowerCase());
+ await store.set("members",hash(n.toLowerCase()),{name:m?m.name:n,role:r,ts:m?m.ts:undefined});log("تعيين رتبة "+RN[r]+" للعضو "+n);$("as_n").value="";toast("تم تعيين الرتبة ✅ — تتفعّل لما العضو يدخل")};
+function rLg(){$("ll").innerHTML="<h3>اللوجات</h3>"+LG.sort((a,b)=>b.ts-a.ts).slice(0,60).map(l=>`<div class="mr"><span>${esc(l.t)}</span><small class="hint">${esc(l.by)} · ${new Date(l.ts).toLocaleString("ar-EG")}</small></div>`).join("")}
+// pixel anime background
+const pv=$("px"),cx=pv.getContext("2d");pv.width=192;pv.height=108;
+const rg=(()=>{let s=7;return()=>(s=(s*16807)%2147483647)/2147483647})();
+const BL=[];for(let x=0;x<192;){const w=7+(rg()*8|0),h=14+(rg()*34|0);BL.push({x,w,h});x+=w}
+const ST=Array.from({length:45},()=>({x:rg()*192|0,y:rg()*60|0,o:rg()*6}));
+const R=(x,y,w,h,c)=>{cx.fillStyle=c;cx.fillRect(x|0,y|0,w,h)};
+function girl(t){const x=131,y=46,w=Math.sin(t/350),b=(t%3400)<150;
+ R(x-3,y,22,19,"#b5122b");for(let i=0;i<5;i++)R(x-3+i*4.4,y+19,4,5+Math.round(Math.sin(t/300+i)*2),"#b5122b");
+ R(x+1,y+3,14,13,"#ffd9c9");R(x,y,16,5,"#ff2d46");R(x+1,y+5,3,3,"#ff2d46");R(x+6,y+5,4,2,"#ff2d46");R(x+12,y+5,3,3,"#ff2d46");R(x+7,y-3,2,3,"#ff2d46");R(x+9+w,y-4,2,1,"#ff2d46");
+ if(b){R(x+3,y+11,4,1,"#5a0a1a");R(x+10,y+11,4,1,"#5a0a1a")}else[3,10].forEach(e=>{R(x+e,y+9,4,4,"#fff");R(x+e+1,y+9,2,4,"#ff1f3d");R(x+e+1,y+9,1,1,"#fff")});
+ R(x+2,y+14,2,1,"#ff9aa8");R(x+12,y+14,2,1,"#ff9aa8");R(x+7,y+15,2,1,"#c4384a");
+ R(x+2,y+16,12,12,"#2a0a14");R(x,y+18,3,8,"#2a0a14");R(x+13,y+18,3,8,"#2a0a14");R(x+5,y+16,6,2,"#fff");R(x+3,y+17,10,2,"#ff2d46");R(x+13,y+18,5+w*1.5,2,"#ff2d46");R(x+16+w*2,y+20,3,2,"#ff2d46");
+ R(x+3,y+28,4,6,"#1a0610");R(x+9,y+28,4,6,"#1a0610");R(x+2,y+34,5,2,"#fff");R(x+9,y+34,5,2,"#fff")}
+function scene(t){["#12020a","#1c030e","#290515","#3c0720","#560a1e","#7a0f20"].forEach((c,i)=>R(0,i*18,192,18,c));
+ ST.forEach(s=>{if(((t/500+s.o)|0)%3)R(s.x,s.y,1,1,"#ffd0d6")});
+ const mc=(t/1500|0)%2?"#ff3b52":"#ff4d63";for(let dy=-14;dy<=14;dy++)for(let dx=-14;dx<=14;dx++)if(dx*dx+dy*dy<=196)R(150+dx,26+dy,1,1,mc);R(144,22,3,2,"#e0243a");R(155,30,4,3,"#e0243a");R(148,34,2,2,"#e0243a");
+ [[20,22,.012],[100,40,.008],[160,15,.01]].forEach(c=>{const x=(c[0]+t*c[2])%220-20;R(x,c[1],16,3,"#3a0a18");R(x+3,c[1]-2,9,2,"#3a0a18")});
+ BL.forEach(b=>{R(b.x,108-b.h,b.w,b.h,"#1a0309");for(let wy=108-b.h+3;wy<105;wy+=5)for(let wx=b.x+1;wx<b.x+b.w-1;wx+=3)if((wx*7+wy*13+(t/900|0))%5==0)R(wx,wy,1,2,"#ff6a7a")});
+ R(118,82,40,26,"#240610");R(118,82,40,2,"#ff2d46");girl(t)}
+let pxr=false;function startPx(){if(pxr||DS)return;pxr=true;(function f(){if(DS){pxr=false;return}scene(performance.now());setTimeout(f,83)})()}
+// init
+document.querySelectorAll("[data-invite]").forEach(a=>a.href=INVITE);
+setDS(ls("e4_ds")=="1"||!!(navigator.connection&&navigator.connection.saveData));if(!DS)tick();media();
+</script>
+</body>
+</html>
